@@ -69,7 +69,7 @@ class Selection:
 
     def get(self, category: str, name: str = "", content: str = "") -> list[str]:
         with Loader("Fetching items..."):
-            r = self.__session.api().invoke_url(f"me/{category}", limit=50)
+            r = self.__session.api().invoke_url(f"me/{category}", limit=50000)
             if content != "":
                 r = r[content]
             resp = r["items"]
